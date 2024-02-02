@@ -15,7 +15,6 @@
     ],
     "require": {
         "diglactic/laravel-breadcrumbs": "^8.1",
-        "livewire/livewire": "^3.2",
         "yajra/laravel-datatables": "^10.0"
     },
     "require-dev": {
