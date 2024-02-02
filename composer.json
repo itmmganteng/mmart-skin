@@ -1,0 +1,31 @@
+{
+    "name": "itmm/m-mart-skin",
+    "description": "Package untuk template web apikasi mmart",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Itmm\\MMartSkin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ITMM KDS"
+        }
+    ],
+    "require": {
+        "diglactic/laravel-breadcrumbs": "^8.1",
+        "livewire/livewire": "^3.2",
+        "yajra/laravel-datatables": "^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Itmm\\MMartSkin\\MMartSkinServiceProvider"
+            ]
+        }
+    }
+}
