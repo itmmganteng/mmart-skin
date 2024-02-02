@@ -14,11 +14,18 @@
         }
     ],
     "require": {
-        "diglactic/laravel-breadcrumbs": "^8.1",
-        "yajra/laravel-datatables": "^10.0"
+        "php": "^8.1",
+        "yajra/laravel-datatables-buttons": "^10",
+        "yajra/laravel-datatables-editor": "1.*",
+        "yajra/laravel-datatables-export": "^10",
+        "yajra/laravel-datatables-fractal": "^10",
+        "yajra/laravel-datatables-html": "^10",
+        "yajra/laravel-datatables-oracle": "^10",
+        "yajra/laravel-datatables": "^10.1",
+        "diglactic/laravel-breadcrumbs": "^8.1"
     },
     "require-dev": {
-        "laravel/pint": "^1.0"
+        "laravel/pint": "^1.13"
     },
     "extra": {
         "laravel": {
