@@ -9,15 +9,15 @@ Setelah melakukan pembuatan project laravel, silahkan gunakan langkah-langkah be
 ### Via composer
 
 1. `Cd` ke Project Laravel
-4. Install package `itmm/m-mart-skin` menggunakan perintah:
+2. Install package `itmm/m-mart-skin` menggunakan perintah:
 ```
 composer require itmm/m-mart-skin
 ```
-5. Jalankan perintah berikut untuk melakukan instalasi template 
+3. Jalankan perintah berikut untuk melakukan instalasi template 
 ```
 php artisan mmart-skin:install
 ```
-7. Tambahkan Script berikut ke `app/Providers/AppServiceProvider.php`
+4. Tambahkan Script berikut ke `app/Providers/AppServiceProvider.php`
 ```
 ...
 use App\Core\KTBootstrap;
@@ -30,7 +30,7 @@ public function boot()
     KTBootstrap::init();
 }
 ```
-8. Tambahkan fungsi berikut ke `app/Providers/EventServiceProvider.php`
+5. Tambahkan fungsi berikut ke `app/Providers/EventServiceProvider.php`
 ```
 class EventServiceProvider extends ServiceProvider
 {
@@ -42,7 +42,7 @@ class EventServiceProvider extends ServiceProvider
     }
 }
 ```
-9. Tambahkan Script berikut ke `app/Providers/RouteServiceProvider.php` pada function `boot` pada `$this->routes(function () { ... }`
+6. Tambahkan Script berikut ke `app/Providers/RouteServiceProvider.php` pada function `boot` pada `$this->routes(function () { ... }`
 ```
 public function boot()
 {
@@ -54,7 +54,7 @@ public function boot()
     })
 }
 ```
-10. Daftarkan Provider Berikut pada config/app.php
+7. Daftarkan Provider Berikut pada config/app.php
 ```
 'providers' => [
     ...,
