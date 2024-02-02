@@ -21,6 +21,10 @@ composer require yajra/laravel-datatables
 ```
 composer require itmm/m-mart-skin
 ```
+4. Jalankan perintah berikut
+```
+composer dump-autoload
+```
 5. Jalankan perintah berikut untuk melakukan instalasi template 
 ```
 php artisan mmart-skin:install

@@ -1,6 +1,6 @@
 {
     "name": "itmm/m-mart-skin",
-    "description": "Package untuk template web apikasi mmart",
+    "description": "Package untuk template web pada aplikasi M Mart",
     "type": "library",
     "license": "MIT",
     "autoload": {
