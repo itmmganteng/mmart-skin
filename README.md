@@ -19,34 +19,45 @@ php artisan mmart-skin:install
 ```
 7. Tambahkan Script berikut ke `app/Providers/AppServiceProvider.php`
 ```
+...
 use App\Core\KTBootstrap;
 use Illuminate\Database\Schema\Builder;
 
 public function boot()
 {
-    // Tambahkan
+    ...
     Builder::defaultStringLength(191);
     KTBootstrap::init();
 }
 ```
 8. Tambahkan fungsi berikut ke `app/Providers/EventServiceProvider.php`
 ```
-/**
-* Determine if events and listeners should be automatically discovered.
-*
-* @return bool
-*/
-public function shouldDiscoverEvents()
+class EventServiceProvider extends ServiceProvider
 {
-    return false;
+    ...
+
+    public function shouldDiscoverEvents()
+    {
+        return false;
+    }
 }
 ```
 9. Tambahkan Script berikut ke `app/Providers/RouteServiceProvider.php` pada function `boot` pada `$this->routes(function () { ... }`
 ```
-Route::middleware('web')
-    ->group(base_path('routes/example.php'));
+public function boot()
+{
+    ...
+    $this->routes(function () {
+        ...
+        Route::middleware('web')
+            ->group(base_path('routes/example.php'));
+    })
+}
 ```
 10. Daftarkan Provider Berikut pada config/app.php
 ```
-App\Providers\HelperServiceProvider::class
+'providers' => [
+    ...,
+    App\Providers\HelperServiceProvider::class,
+]
 ```
