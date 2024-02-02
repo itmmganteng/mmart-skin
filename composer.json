@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^7.4",
         "yajra/laravel-datatables-oracle": "^9.0",
         "diglactic/laravel-breadcrumbs": "^8.1"
     },
