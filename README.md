@@ -61,3 +61,4 @@ public function boot()
     App\Providers\HelperServiceProvider::class,
 ]
 ```
+8. Penggunaan template ini bisa dilihat pada [Documentation](https://preview.keenthemes.com/laravel/metronic/docs/index)
