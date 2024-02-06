@@ -50,6 +50,7 @@ public function boot()
     $this->routes(function () {
         ...
         Route::middleware('web')
+            ->namespace($this->namespace)
             ->group(base_path('routes/example.php'));
     })
 }

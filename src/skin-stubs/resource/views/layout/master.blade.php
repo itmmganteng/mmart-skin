@@ -20,17 +20,17 @@
     {!! includeFonts() !!}
     <!--end::Fonts-->
 
-    <!--begin::Vendor Stylesheets(used by this page)-->
-    @foreach(getVendors('css') as $path)
-        {!! sprintf('<link rel="stylesheet" href="%s">', asset($path)) !!}
-    @endforeach
-    <!--end::Vendor Stylesheets-->
-
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     @foreach(getGlobalAssets('css') as $path)
         {!! sprintf('<link rel="stylesheet" href="%s">', asset($path)) !!}
     @endforeach
     <!--end::Global Stylesheets Bundle-->
+
+    <!--begin::Vendor Stylesheets(used by this page)-->
+    @foreach(getVendors('css') as $path)
+        {!! sprintf('<link rel="stylesheet" href="%s">', asset($path)) !!}
+    @endforeach
+    <!--end::Vendor Stylesheets-->
 
     <!--begin::Custom Stylesheets(optional)-->
     @foreach(getCustomCss() as $path)

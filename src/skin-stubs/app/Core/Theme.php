@@ -431,114 +431,165 @@ class Theme
         return true;
     }
 
-    function renderMenus($menus = null){
-        if($menus == null)
-            $menus = config('menu.KT_MENUS');
+    function renderMenus($menus)
+    {
+        $master_render = "";
+        $master_active = [];
 
-        $render = '';
+        foreach ($menus as $menu) {
+            # Cek Permission
+            if(isset($menu['permission']) && count($menu['permission']) > 0 && isset($menu['permissionType'])) {
+                if($menu['permissionType'] == 'laratrust'){
+                    # Cek permission menu dengan laratrust
+                    if(!Laratrust::isAbleTo($menu['permission']))
+                        continue;
+                } else {
+                    # Cek permission menu dengan gate
+                    if(!self::permissionExist($menu['permission']))
+                        continue;
+                }
+            }
 
-        foreach ($menus as $key => $menu) {
-            if(isset($permission) && count($permission) > 0)
-                if(!self::permissionExist($menu['permission']))
-                    continue;
+            $menu_active = [];
 
-            if($menu['type'] == 'item'){
-                if ( isset($menu['children'])){
-                    $render .= "<div data-kt-menu-trigger='click' class='menu-item ";
-                    if(isset($menu['route'])){
-                        if(request()->routeIs( $menu['route'] . '.*' ))
-                            $render .= "here show";
-                        else
-                            $render .= "";
-                    }
-                    $render .= " menu-accordion'><span class='menu-link ";
-                    if(isset($menu['route'])){
-                        if(request()->routeIs( $menu['route'] . '.*' ))
-                            $render .= "active";
-                        else
-                            $render .= "";
-                    }
-                    $render .= "'>";
+            if($menu['type'] == 'item') {
+                if (isset($menu['children']) && count($menu['children']) > 0) {
+                    # Jika Mempunyai Children
+                    [$children_render, $children_active] = self::renderMenus($menu['children']);
+
+                    # Merge Children Active to Menu Active
+                    $menu_active = $children_active;
+
+                    $master_render .= "<div data-kt-menu-trigger='click' class='menu-item ";
+
+                    # Tambahkan class jika activenya benar
+                    if(request()->routeIs($menu_active))
+                        $master_render .= "here show";
+                    else
+                        $master_render .= "";
+
+                    $master_render .= " menu-accordion'><span class='menu-link ";
+
+                    # Tambahkan class jika activenya benar
+                    if(request()->routeIs($menu_active))
+                        $master_render .= "active";
+                    else
+                        $master_render .= "";
+                    $master_render .= "'>";
+
+                    # Pengaturan Icon
                     if ( $menu['icon'] == 'ki' ) {
-                        $render .= "
+                        # Jika menggunakan icon Keen Icon
+                        $master_render .= "
                                 <span class='menu-icon'>
                                     <i class='ki-duotone " . $menu['iconName'] . " fs-2'>";
                         for ($i = 1; $i <= $menu['iconPath']; $i++) {
-                            $render .= "<span class='path" . $i . "'></span>";
+                            $master_render .= "<span class='path" . $i . "'></span>";
                         }
-                        $render .= "
+                        $master_render .= "
                                     </i>
                                 </span>
                         ";
                     } else if ( $menu['icon'] == 'dot' ) {
-                        $render .= "
+                        # Jika menggunakan icon Dot
+                        $master_render .= "
                                 <span class='menu-bullet'>
                                     <span class='bullet bullet-dot'></span>
                                 </span>";
                     }
 
-                    $render .= "
+                    $master_render .= "
                                 <span class='menu-title'>" . $menu['label'] . "</span>
                                 <span class='menu-arrow'></span>
                             </span>
-                    ";
-                    if(count($menu['children']) > 0){
-                        $render .= "
-                                <div class='menu-sub menu-sub-accordion'>
-                                    " . self::renderMenus($menu['children']) . "
-                                </div>
+                            <div class='menu-sub menu-sub-accordion'>
+                                " . $children_render . "
                             </div>
-                        ";
-                    }
+                        </div>
+                    ";
+
                 } else {
-                    $render .= "<div class='menu-item'><a class='menu-link ";
-                    if(isset($menu['route'])){
-                        if (request()->routeIs( $menu['route'] ))
-                            $render .= "active";
-                        else
-                            $render .= "";
+                    # Jika Tidak Mempunyai Children
+
+                    # Tambahkan route menu ke menu active
+                    if(isset($menu['route'])) {
+                        $menu_active = array_merge($menu_active, [$menu['route']]);
                     }
-                    $render .= "' href='";
+
+                    # Tambahkan active ke menu active
+                    if(isset($menu['active'])) {
+                        $menu_active = array_merge($menu_active, $menu['active']);
+                    }
+
+                    $master_render .= "<div class='menu-item'><a class='menu-link ";
+
+                    if (request()->routeIs($menu_active))
+                        $master_render .= "active";
+                    else
+                        $master_render .= "";
+
+                    $master_render .= "' href='";
+
                     if(isset($menu['route'])){
-                        $render .= route( $menu['route'] );
-                    } else if(isset($menu['href'])){
-                        $render .= $menu['href'];
+                        $master_render .= route($menu['route']);
+                    } else if (isset($menu['url'])) {
+                        $master_render .= $menu['url'];
                     } else {
-                        $render .= "#";
+                        $master_render .= "#";
                     }
-                    $render .= "'>";
+
+                    $master_render .= "'>";
+
+                    # Pengaturan Icon
                     if ( $menu['icon'] == 'ki' ) {
-                        $render .= "
+                        # Jika menggunakan icon Keen Icon
+                        $master_render .= "
                                 <span class='menu-icon'>
                                     <i class='ki-duotone " . $menu['iconName'] . " fs-2'>";
                         for ($i = 1; $i <= $menu['iconPath']; $i++) {
-                            $render .= "<span class='path" . $i . "'></span>";
+                            $master_render .= "<span class='path" . $i . "'></span>";
                         }
-                        $render .= "
+                        $master_render .= "
                                     </i>
                                 </span>
                         ";
                     } else if ( $menu['icon'] == 'dot' ) {
-                        $render .= "
+                        # Jika menggunakan icon Dot
+                        $master_render .= "
                                 <span class='menu-bullet'>
                                     <span class='bullet bullet-dot'></span>
                                 </span>";
                     }
-                    $render .= "
+
+                    $master_render .= "
                                 <span class='menu-title'>" . $menu['label'] . "</span>
                             </a>
                         </div>
                     ";
+
                 }
             } else if ($menu['type'] == 'heading') {
-                $render .= "
+                $master_render .= "
                     <div class='menu-item pt-5'>
                         <div class='menu-content'>
                             <span class='menu-heading fw-bold text-uppercase fs-7'>" . $menu['label'] . "</span>
                         </div>
                     </div>";
             }
+
+            $master_active = array_merge($master_active, $menu_active);
         }
+
+        return [
+            $master_render,
+            $master_active
+        ];
+    }
+
+    function generateMenu()
+    {
+        $menu = config('menu.KT_MENUS');
+        [$render, $active] = self::renderMenus($menu);
 
         return $render;
     }

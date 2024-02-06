@@ -439,7 +439,7 @@ if (!function_exists('renderMenus')) {
      *
      * @return string
      */
-    function renderMenus($menus = null)
+    function renderMenus($menus)
     {
         return theme()->renderMenus($menus);
     }
@@ -454,5 +454,17 @@ if (!function_exists('permissionExist')) {
     function permissionExist(array $permission)
     {
         return theme()->permissionExist($permission);
+    }
+}
+
+if (!function_exists('generateMenu')) {
+    /**
+     * Render menus from settings
+     *
+     * @return string
+     */
+    function generateMenu()
+    {
+        return theme()->generateMenu();
     }
 }
