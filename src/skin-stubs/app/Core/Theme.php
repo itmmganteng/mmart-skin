@@ -531,7 +531,7 @@ class Theme
                     $master_render .= "' href='";
 
                     if(isset($menu['route'])){
-                        $master_render .= route($menu['route']);
+                        $master_render .= route($menu['route'], isset($menu['routeParam']) ? $menu['routeParam'] : []);
                     } else if (isset($menu['url'])) {
                         $master_render .= $menu['url'];
                     } else {
