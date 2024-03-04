@@ -70,6 +70,7 @@ return [
             ],
             'js' => [
                 'assets/plugins/custom/datatables/datatables.bundle.js',
+                'assets/plugins/custom/datatables/datatables.fix.js',
             ],
         ],
         'formrepeater' => [

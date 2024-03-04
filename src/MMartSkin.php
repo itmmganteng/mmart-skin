@@ -7,7 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 
 class MMartSkin extends Command
 {
-    protected $signature = 'mmart-skin:install';
+    protected $signature = 'mskin:install';
     protected $description = 'Install Template Web M Mart';
 
     const STUBSPATH = __DIR__.'/skin-stubs/';
@@ -27,7 +27,7 @@ class MMartSkin extends Command
     public static function install()
     {
         static::updateCores();
-        static::updateConfigs();
+        // static::updateConfigs();
         static::updateAssets();
         static::updateResources();
         static::updateRoutes();
@@ -85,11 +85,11 @@ class MMartSkin extends Command
      *
      * @return void
      */
-    protected static function updateConfigs()
-    {
-        # Copy config
-        static::copyDirectory('config', config_path());
-    }
+    // protected static function updateConfigs()
+    // {
+    //     # Copy config
+    //     static::copyDirectory('config', config_path());
+    // }
 
     /**
      * Update the asset

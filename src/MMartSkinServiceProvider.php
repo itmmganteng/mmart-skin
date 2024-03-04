@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 
 class MMartSkinServiceProvider extends ServiceProvider
 {
+
+    const STUBSPATH = __DIR__.'/skin-stubs/';
+
     /**
      * Perform post-registration booting of services.
      *
@@ -25,6 +28,9 @@ class MMartSkinServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        // Publish Config hanya jika melakukan instalasi pertama kali
+        $this->publishes([
+            static::STUBSPATH . '/config' => base_path('config');
+        ], 'mskin-config');
     }
 }
