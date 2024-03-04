@@ -30,7 +30,7 @@ class MMartSkinServiceProvider extends ServiceProvider
     {
         // Publish Config hanya jika melakukan instalasi pertama kali
         $this->publishes([
-            static::STUBSPATH . '/config' => base_path('config');
+            static::STUBSPATH . '/config' => base_path('config'),
         ], 'mskin-config');
     }
 }
