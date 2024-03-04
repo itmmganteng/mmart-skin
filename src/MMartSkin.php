@@ -27,7 +27,6 @@ class MMartSkin extends Command
     public static function install()
     {
         static::updateCores();
-        // static::updateConfigs();
         static::updateAssets();
         static::updateResources();
         static::updateRoutes();
@@ -79,17 +78,6 @@ class MMartSkin extends Command
         # Copy View
         static::copyDirectory('app/View', app_path('View'));
     }
-
-    /**
-     * Update the config
-     *
-     * @return void
-     */
-    // protected static function updateConfigs()
-    // {
-    //     # Copy config
-    //     static::copyDirectory('config', config_path());
-    // }
 
     /**
      * Update the asset
