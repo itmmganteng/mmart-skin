@@ -62,4 +62,8 @@ public function boot()
     App\Providers\HelperServiceProvider::class,
 ]
 ```
+8. Jalankan command berikut untuk mempublish config (opsional)
+```
+php artisan vendor:publish --tag=mskin-config --force
+```
 9. Penggunaan template ini bisa dilihat pada [Documentation](https://preview.keenthemes.com/laravel/metronic/docs/index)
