@@ -15,7 +15,7 @@ composer require itmm/m-mart-skin
 ```
 3. Jalankan perintah berikut untuk melakukan instalasi template 
 ```
-php artisan mmart-skin:install
+php artisan mskin:install
 ```
 4. Tambahkan Script berikut ke `app/Providers/AppServiceProvider.php`
 ```
