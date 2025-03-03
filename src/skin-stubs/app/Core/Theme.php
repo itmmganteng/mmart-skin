@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Helpers\PermissionHelper;
 use Illuminate\Support\Facades\Gate;
 
 class Theme
@@ -436,6 +437,10 @@ class Theme
         $master_render = "";
         $master_active = [];
 
+        $icons = cache()->remember('duotone-icons', 3600, function () {
+            return json_decode(file_get_contents(public_path('icons.json')), true);
+        });
+
         foreach ($menus as $menu) {
             # Cek Permission
             if(isset($menu['permission']) && count($menu['permission']) > 0 && isset($menu['permissionType'])) {
@@ -471,10 +476,10 @@ class Theme
                     $master_render .= " menu-accordion'><span class='menu-link ";
 
                     # Tambahkan class jika activenya benar
-                    if(request()->routeIs($menu_active))
-                        $master_render .= "active";
-                    else
-                        $master_render .= "";
+                    // if(request()->routeIs($menu_active))
+                    //     $master_render .= "active";
+                    // else
+                    //     $master_render .= "";
                     $master_render .= "'>";
 
                     # Pengaturan Icon
@@ -482,8 +487,9 @@ class Theme
                         # Jika menggunakan icon Keen Icon
                         $master_render .= "
                                 <span class='menu-icon'>
-                                    <i class='ki-duotone " . $menu['iconName'] . " fs-2'>";
-                        for ($i = 1; $i <= $menu['iconPath']; $i++) {
+                                    <i class='ki-duotone ki-" . $menu['iconName'] . " fs-2'>";
+                        $pathsNumber = data_get($icons, 'duotone-paths.'.$menu['iconName'], 0);
+                        for ($i = 1; $i <= $pathsNumber; $i++) {
                             $master_render .= "<span class='path" . $i . "'></span>";
                         }
                         $master_render .= "
@@ -521,7 +527,7 @@ class Theme
                         $menu_active = array_merge($menu_active, $menu['active']);
                     }
 
-                    $master_render .= "<div class='menu-item'><a class='menu-link ";
+                    $master_render .= "<div class='menu-item'><a class='menu-link bg-hover-secondary ";
 
                     if (request()->routeIs($menu_active))
                         $master_render .= "active";
@@ -545,8 +551,9 @@ class Theme
                         # Jika menggunakan icon Keen Icon
                         $master_render .= "
                                 <span class='menu-icon'>
-                                    <i class='ki-duotone " . $menu['iconName'] . " fs-2'>";
-                        for ($i = 1; $i <= $menu['iconPath']; $i++) {
+                                    <i class='ki-duotone ki-" . $menu['iconName'] . " fs-2'>";
+                        $pathsNumber = data_get($icons, 'duotone-paths.'.$menu['iconName'], 0);
+                        for ($i = 1; $i <= $pathsNumber; $i++) {
                             $master_render .= "<span class='path" . $i . "'></span>";
                         }
                         $master_render .= "
@@ -592,5 +599,40 @@ class Theme
         [$render, $active] = self::renderMenus($menu);
 
         return $render;
+    }
+
+    function strToBoolean($value)
+    {
+        return $value == 'true' ? true : false;
+    }
+
+    function strToNull($value)
+    {
+        return $value == '' ? null : $value;
+    }
+
+    function hasPermission(string $permission)
+    {
+        $ablities = collect(Gate::abilities())->keys();
+
+        return $ablities->contains($permission);
+    }
+
+    function hasAnyPermissions(array $permissions)
+    {
+        $ablities = collect(Gate::abilities())->keys();
+
+        return collect($permissions)->some(function($permission) use ($ablities) {
+            return collect($ablities)->contains($permission);
+        });
+    }
+
+    function renderIcon($icon, $icons, $iconSize = 5) {
+        $iconPath = '';
+        $pathsNumber = data_get($icons, 'duotone-paths.' . $icon, 0);
+        for ($i = 1; $i <= $pathsNumber; $i++) {
+            $iconPath .= "<span class=\"path$i\"></span>";
+        }
+        return "<i class='ki-duotone ki-{$icon} fs-{$iconSize} me-1'>{$iconPath}</i>";
     }
 }

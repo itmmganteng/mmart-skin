@@ -11,8 +11,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-element-11',
-            'iconPath'       => 4,
+            'iconName'       => 'element-11',
             'children'       => [
                 [
                     'label'          => 'Default',
@@ -180,8 +179,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-address-book',
-            'iconPath'       => 3,
+            'iconName'       => 'address-book',
             'children'       => [
                 [
                     'label'          => 'Overview',
@@ -245,8 +243,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-element-plus',
-            'iconPath'       => 5,
+            'iconName'       => 'element-plus',
             'children'       => [
                 [
                     'label'          => 'Overview',
@@ -337,8 +334,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-user',
-            'iconPath'       => 2,
+            'iconName'       => 'user',
             'children'       => [
                 [
                     'label'          => 'Corporate Layout',
@@ -708,8 +704,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-file',
-            'iconPath'       => 2,
+            'iconName'       => 'file',
             'children'       => [
                 [
                     'label'          => 'About',
@@ -764,8 +759,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-39',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-39',
             'children'       => [
                 [
                     'label'          => 'Feeds',
@@ -811,8 +805,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-bank',
-            'iconPath'       => 2,
+            'iconName'       => 'bank',
             'children'       => [
                 [
                     'label'          => 'Blog Home',
@@ -840,8 +833,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-chart-pie-3',
-            'iconPath'       => 3,
+            'iconName'       => 'chart-pie-3',
             'children'       => [
                 [
                     'label'          => 'FAQ Classic',
@@ -869,8 +861,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-bucket',
-            'iconPath'       => 4,
+            'iconName'       => 'bucket',
             'children'       => [
                 [
                     'label'          => 'Column Pricing',
@@ -898,8 +889,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-call',
-            'iconPath'       => 8,
+            'iconName'       => 'call',
             'children'       => [
                 [
                     'label'          => 'Careers List',
@@ -927,8 +917,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-color-swatch',
-            'iconPath'       => 21,
+            'iconName'       => 'color-swatch',
             'children'       => [
                 [
                     'label'          => 'Modals',
@@ -1280,8 +1269,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-element-7',
-            'iconPath'       => 2,
+            'iconName'       => 'element-7',
             'children'       => [
                 [
                     'label'          => 'Lists',
@@ -1349,8 +1337,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-41',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-41',
             'children'       => [
                 [
                     'label'          => 'My Projects',
@@ -1432,8 +1419,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-basket',
-            'iconPath'       => 4,
+            'iconName'       => 'basket',
             'children'       => [
                 [
                     'label'          => 'Catalog',
@@ -1641,8 +1627,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-25',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-25',
             'children'       => [
                 [
                     'label'          => 'Getting Started',
@@ -1688,8 +1673,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-chart',
-            'iconPath'       => 2,
+            'iconName'       => 'chart',
             'children'       => [
                 [
                     'label'          => 'Overview',
@@ -1789,8 +1773,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-28',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-28',
             'children'       => [
                 [
                     'label'          => 'Users',
@@ -1863,8 +1846,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-38',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-38',
             'children'       => [
                 [
                     'label'          => 'Getting Started',
@@ -1901,8 +1883,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-map',
-            'iconPath'       => 3,
+            'iconName'       => 'map',
             'children'       => [
                 [
                     'label'          => 'Getting Started',
@@ -1948,8 +1929,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-credit-cart',
-            'iconPath'       => 2,
+            'iconName'       => 'credit-cart',
             'children'       => [
                 [
                     'label'          => 'View Invoice',
@@ -2004,8 +1984,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-switch',
-            'iconPath'       => 2,
+            'iconName'       => 'switch',
             'children'       => [
                 [
                     'label'          => 'Folders',
@@ -2051,8 +2030,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-sms',
-            'iconPath'       => 2,
+            'iconName'       => 'sms',
             'children'       => [
                 [
                     'label'          => 'Messages',
@@ -2089,8 +2067,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-message-text-2',
-            'iconPath'       => 3,
+            'iconName'       => 'message-text-2',
             'children'       => [
                 [
                     'label'          => 'Private Chat',
@@ -2127,8 +2104,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-calendar-8',
-            'iconPath'       => 6,
+            'iconName'       => 'calendar-8',
         ],
         [
             'label'          => 'Help',
@@ -2142,8 +2118,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-rocket',
-            'iconPath'       => 2,
+            'iconName'       => 'rocket',
         ],
         [
             'label'          => 'Documentation',
@@ -2153,8 +2128,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-abstract-26',
-            'iconPath'       => 2,
+            'iconName'       => 'abstract-26',
         ],
         [
             'label'          => 'Changelog v8.2.1',
@@ -2164,8 +2138,7 @@ return [
             'permission'     => [],
             'permissionType' => 'gate',
             'icon'           => 'ki',
-            'iconName'       => 'ki-code',
-            'iconPath'       => 4,
+            'iconName'       => 'code',
         ],
     ],
 ];

@@ -95,15 +95,6 @@
     <!--begin::Menu separator-->
     <div class="separator my-2"></div>
     <!--end::Menu separator-->
-    <!--begin::Menu item-->
-    <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
-        <a href="#" class="menu-link px-5">
-			<span class="menu-title position-relative">Mode
-			<span class="ms-5 position-absolute translate-middle-y top-50 end-0">{!! getIcon('night-day', 'theme-light-show fs-2') !!} {!! getIcon('moon', 'theme-dark-show fs-2') !!}</span></span>
-		</a>
-		@include('partials/theme-mode/__menu')
-	</div>
-	<!--end::Menu item-->
 	<!--begin::Menu item-->
 	<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
 		<a href="#" class="menu-link px-5">

@@ -63,6 +63,11 @@
         <!--end::Menu wrapper-->
     </div>
     <!--end::My apps links-->
+    <!--begin::Theme Mode-->
+    <div class="app-navbar-item ms-1 ms-md-4">
+        @include('partials/theme-mode/_main')
+    </div>
+    <!--end::Theme Mode-->
     <!--begin::User menu-->
     <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
         <!--begin::Menu wrapper-->

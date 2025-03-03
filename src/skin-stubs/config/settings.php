@@ -49,13 +49,14 @@ return [
         ],
         'global' => [
             'css' => [
-                'assets/plugins/global/plugins.bundle.css',
-                'assets/css/style.bundle.css',
+                'assets/plugins/global/plugins.bundle.min.css',
+                'assets/css/style.bundle.min.css',
             ],
             'js' => [
-                'assets/plugins/global/plugins.bundle.js',
-                'assets/js/scripts.bundle.js',
-                'assets/js/widgets.bundle.js',
+                'assets/plugins/global/plugins.bundle.min.js',
+                'assets/js/scripts.bundle.min.js',
+                'assets/js/widgets.bundle.min.js',
+                'assets/plugins/global/flatpickr/flatpickr.l10ns.id.js',
             ],
         ],
     ],
@@ -69,7 +70,7 @@ return [
                 'assets/plugins/custom/datatables/datatables.bundle.css',
             ],
             'js' => [
-                'assets/plugins/custom/datatables/datatables.bundle.js',
+                'assets/plugins/custom/datatables/datatables.bundle.min.js',
                 'assets/plugins/custom/datatables/datatables.fix.js',
             ],
         ],
@@ -231,6 +232,41 @@ return [
             ],
             'js' => [
                 'assets/plugins/custom/bootstrap-select/bootstrap-select.bundle.js',
+            ],
+        ],
+        'validation' => [
+            'js' => [
+                'assets/plugins/custom/validation/validation.bundle.js',
+            ],
+        ],
+        'loading' => [
+            'js' => [
+                'assets/plugins/custom/loading/loading.bundle.js',
+            ],
+        ],
+        'clipboard' => [
+            'js' => [
+                'assets/plugins/custom/clipboard/clipboard.bundle.js',
+            ],
+        ],
+        'sweetalert' => [
+            'js' => [
+                'assets/plugins/custom/sweetalert/sweetalert.init.js',
+            ],
+        ],
+        'codemirror' => [
+            'css' => [
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/theme/dracula.min.css',
+            ],
+            'js' => [
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/javascript/javascript.min.js',
+            ],
+        ],
+        'delay' => [
+            'js' => [
+                'assets/plugins/custom/delay/delay.bundle.js',
             ],
         ],
     ],

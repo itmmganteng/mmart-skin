@@ -468,3 +468,64 @@ if (!function_exists('generateMenu')) {
         return theme()->generateMenu();
     }
 }
+
+if (!function_exists('strToBoolean')) {
+    /**
+     * Render menus from settings
+     *
+     * @return string
+     */
+    function strToBoolean($value)
+    {
+        return theme()->strToBoolean($value);
+    }
+}
+
+if (!function_exists('strToNull')) {
+    /**
+     * Render menus from settings
+     *
+     * @return string
+     */
+    function strToNull($value)
+    {
+        return theme()->strToNull($value);
+    }
+}
+
+if (!function_exists('hasPermission')) {
+    /**
+     * Check if user has permission
+     *
+     * @return string
+     */
+    function hasPermission(string $permission)
+    {
+        return theme()->hasPermission($permission);
+    }
+}
+
+if (!function_exists('hasAnyPermissions')) {
+    /**
+     * Check if user has permission
+     *
+     * @return string
+     */
+    function hasAnyPermissions(array $permissions)
+    {
+        return theme()->hasAnyPermissions($permissions);
+    }
+}
+
+if (!function_exists('renderIcon')) {
+    /**
+     * Check if user has permission
+     *
+     * @return string
+     */
+    function renderIcon($icon, $icons, $iconSize = 4)
+    {
+        return theme()->renderIcon($icon, $icons, $iconSize);
+    }
+}
+

@@ -28,7 +28,7 @@ class BootstrapDefault
     public function initAssets()
     {
         # Include global vendors
-        addVendors(['datatables']);
+        addVendors(['datatables', 'sweetalert', 'delay']);
 
         # Include global javascript files
         // addJavascriptFile('js/front.js');
